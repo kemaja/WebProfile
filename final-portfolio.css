@@ -1,0 +1,906 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, 
+        #8b6914 0%,           /* Rich brown */
+        #a67c1a 15%,          /* Medium brown */
+        #c49b3d 30%,          /* Golden brown */
+        #e6d4a1 50%,          /* Light beige */
+        #f5f3f0 70%,          /* Off-white */
+        #faf8f6 85%,          /* Lighter off-white */
+        #ffffff 100%          /* Pure white */
+    );
+    background-attachment: fixed;
+    color: #3c2414;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Delicate pattern overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(60, 36, 20, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(139, 105, 20, 0.03) 1px, transparent 1px),
+        linear-gradient(45deg, transparent 40%, rgba(245, 243, 240, 0.02) 50%, transparent 60%);
+    background-size: 60px 60px, 40px 40px, 80px 80px;
+    background-position: 0 0, 30px 30px, 0 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(250, 248, 246, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(60, 36, 20, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Logo Styles */
+.logo-image {
+    max-height: 60px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3c2414;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-size: 14px;
+    font-weight: 400;
+    color: #8b6914;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    background-color: rgba(250, 248, 246, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(60, 36, 20, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 0 20px;
+}
+
+.nav-item {
+    font-size: 20px;
+    font-weight: 700;
+    color: #3c2414;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item:hover {
+    color: #8b6914;
+}
+
+/* Sections */
+.section {
+    padding: 100px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #3c2414;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: -1px;
+}
+
+/* Home Section */
+.home-section {
+    background: linear-gradient(135deg, rgba(250, 248, 246, 0.6) 0%, rgba(245, 243, 240, 0.4) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 180px;
+}
+
+.hero-content {
+    margin-bottom: 60px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #3c2414;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #8b6914;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(60, 36, 20, 0.1);
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.carousel-btn {
+    background-color: rgba(60, 36, 20, 0.7);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(60, 36, 20, 0.9);
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(60, 36, 20, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+    background-color: #3c2414;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    background-color: rgba(245, 243, 240, 0.5);
+}
+
+.portfolio-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.category-card {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(60, 36, 20, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(60, 36, 20, 0.15);
+}
+
+.category-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3c2414;
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: #8b6914;
+    margin-bottom: 20px;
+}
+
+.category-preview {
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.preview-canvas {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* About Section */
+.about-section {
+    background-color: rgba(250, 248, 246, 0.4);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-description {
+    font-size: 18px;
+    font-weight: 400;
+    color: #3c2414;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.exhibitions {
+    margin-top: 40px;
+}
+
+.exhibitions h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3c2414;
+    margin-bottom: 15px;
+}
+
+.exhibitions ul {
+    list-style: none;
+}
+
+.exhibitions li {
+    font-size: 16px;
+    color: #8b6914;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.exhibitions li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #3c2414;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(60, 36, 20, 0.1);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: rgba(250, 248, 246, 0.3);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3c2414;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #3c2414;
+    margin-bottom: 30px;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #8b6914;
+    margin-bottom: 10px;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(60, 36, 20, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid rgba(60, 36, 20, 0.1);
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #3c2414;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8b6914;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #3c2414, #8b6914);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(60, 36, 20, 0.3);
+}
+
+/* Butterfly Animation */
+.butterfly {
+    position: fixed;
+    right: 50px;
+    top: 50%;
+    z-index: 999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.butterfly svg {
+    animation: flutter 2s ease-in-out infinite;
+}
+
+@keyframes flutter {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(5deg) scale(1.1); }
+    50% { transform: rotate(0deg) scale(1); }
+    75% { transform: rotate(-5deg) scale(1.1); }
+}
+
+/* Gallery Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: rgba(250, 248, 246, 0.85);
+    backdrop-filter: blur(8px);
+    margin: 5% auto;
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #3c2414;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #8b6914;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(60, 36, 20, 0.1);
+}
+
+.modal-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-nav button {
+    background: rgba(60, 36, 20, 0.7);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.modal-nav button:hover {
+    background: #3c2414;
+}
+
+#imageCounter {
+    font-size: 16px;
+    color: #8b6914;
+    font-weight: 700;
+}
+
+.modal-image-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#modalCanvas {
+    border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(60, 36, 20, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.modal-thumbnails canvas {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 4px;
+}
+
+.modal-thumbnails canvas:hover,
+.modal-thumbnails canvas.active {
+    border-color: #3c2414;
+    transform: scale(1.1);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Responsive delicate pattern for tablets */
+    body::before {
+        background-size: 50px 50px, 35px 35px, 70px 70px;
+    }
+    
+    /* Header adjustments for mobile */
+    .header {
+        padding: 15px 0;
+    }
+    
+    .logo-image {
+        max-height: 45px;
+        max-width: 250px;
+    }
+    
+    .logo-text {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+    
+    .tagline {
+        font-size: 12px;
+    }
+    
+    /* Navigation adjustments for mobile */
+    .navbar {
+        top: 80px;
+        padding: 15px 0;
+    }
+    
+    .nav-container {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        font-size: 16px;
+    }
+    
+    /* Home section adjustments */
+    .home-section {
+        margin-top: 140px;
+        padding: 50px 0;
+    }
+    
+    .hero-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .hero-content {
+        margin-bottom: 40px;
+    }
+    
+    /* Carousel adjustments */
+    .carousel {
+        height: 300px;
+    }
+    
+    .carousel-controls {
+        padding: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    /* Section adjustments */
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    
+    /* Portfolio adjustments */
+    .portfolio-categories {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .category-card {
+        padding: 20px;
+    }
+    
+    .category-card h3 {
+        font-size: 20px;
+    }
+    
+    .category-card p {
+        font-size: 13px;
+    }
+    
+    /* About and Contact sections */
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .about-description {
+        font-size: 16px;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .submit-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+    
+    /* Butterfly adjustments */
+    .butterfly {
+        right: 15px;
+        transform: scale(0.8);
+    }
+    
+    /* Modal adjustments for mobile */
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+        margin: 5% auto;
+        max-height: 90vh;
+    }
+    
+    .modal-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+    
+    .modal-nav button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    #imageCounter {
+        font-size: 14px;
+    }
+    
+    .modal-thumbnails {
+        gap: 8px;
+    }
+    
+    .modal-thumbnails canvas {
+        width: 60px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Responsive delicate pattern for small mobile */
+    body::before {
+        background-size: 40px 40px, 30px 30px, 60px 60px;
+    }
+    
+    /* Very small screens - extra mobile optimizations */
+    .header {
+        padding: 10px 0;
+    }
+    
+    .logo-image {
+        max-height: 35px;
+        max-width: 200px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+        letter-spacing: 0.5px;
+    }
+    
+    .tagline {
+        font-size: 10px;
+    }
+    
+    .navbar {
+        top: 70px;
+        padding: 10px 0;
+    }
+    
+    .nav-container {
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    .nav-item {
+        font-size: 14px;
+    }
+    
+    .home-section {
+        margin-top: 120px;
+        padding: 30px 0;
+    }
+    
+    .hero-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    
+    .hero-content {
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    .carousel {
+        height: 220px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .category-card {
+        padding: 15px;
+    }
+    
+    .category-card h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .category-card p {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+    
+    .category-preview {
+        height: 150px;
+    }
+    
+    .about-description {
+        font-size: 15px;
+    }
+    
+    .exhibitions h3 {
+        font-size: 18px;
+    }
+    
+    .exhibitions li {
+        font-size: 13px;
+    }
+    
+    .contact-info h3 {
+        font-size: 20px;
+    }
+    
+    .contact-info p {
+        font-size: 15px;
+    }
+    
+    .contact-details p {
+        font-size: 14px;
+    }
+    
+    .modal-content {
+        width: 98%;
+        padding: 10px;
+        margin: 2% auto;
+    }
+    
+    .close {
+        top: 5px;
+        right: 10px;
+        font-size: 25px;
+    }
+    
+    .modal-thumbnails canvas {
+        width: 50px;
+        height: 38px;
+    }
+}

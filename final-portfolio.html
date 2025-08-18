@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="final-portfolio.css">
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="header">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="images/logo/logo.png" alt="Maya Mind Photo Logo" class="logo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <h1 class="logo-text" style="display: none;">MAYA MIND PHOTO</h1>
+                <p class="tagline">Photography & Visual Arts</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-item">Home</a>
+            <a href="#portfolio" class="nav-item">Portfolio</a>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Butterfly Animation -->
+    <div class="butterfly" id="butterfly">
+        <svg width="30" height="30" viewBox="0 0 30 30">
+            <path d="M15 15 L10 5 Q15 8 20 5 L15 15 L10 25 Q15 22 20 25 Z" fill="#FFD700" stroke="#FFA500" stroke-width="1"/>
+        </svg>
+    </div>
+
+    <!-- Watermark Logo (hidden, used for canvas) -->
+    <div id="watermark-logo" style="display: none;">
+        <svg width="80" height="40" viewBox="0 0 80 40">
+            <text x="40" y="20" font-family="Playfair Display" font-size="12" font-weight="700" fill="rgba(60, 36, 20, 0.3)" text-anchor="middle" dy=".3em">MAYA MIND</text>
+            <text x="40" y="32" font-family="Playfair Display" font-size="8" fill="rgba(60, 36, 20, 0.25)" text-anchor="middle" dy=".3em">PHOTOGRAPHY</text>
+        </svg>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="section home-section">
+        <div class="hero-content">
+            <h2 class="hero-title">Visual Storytelling Through Photography</h2>
+            <p class="hero-subtitle">Capturing moments, emotions, and the essence of life</p>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <!-- Carousel items will be populated by JavaScript -->
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn prev" onclick="changeSlide(-1)">❮</button>
+                <button class="carousel-btn next" onclick="changeSlide(1)">❯</button>
+            </div>
+            <div class="carousel-indicators" id="indicators"></div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section portfolio-section">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="portfolio-categories">
+                <div class="category-card" onclick="openGallery('portraits', 0)">
+                    <h3>Portraits</h3>
+                    <p>Intimate portraits that reveal the soul</p>
+                    <div class="category-preview">
+                        <canvas class="preview-canvas" data-src="images/portraits/portrait1.jpg" width="300" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="category-card" onclick="openGallery('events', 0)">
+                    <h3>Events</h3>
+                    <p>Capturing extraordinary moments and celebrations</p>
+                    <div class="category-preview">
+                        <canvas class="preview-canvas" data-src="images/events/event1.jpg" width="300" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="category-card" onclick="openGallery('products', 0)">
+                    <h3>Products</h3>
+                    <p>Commercial and product photography</p>
+                    <div class="category-preview">
+                        <canvas class="preview-canvas" data-src="images/products/product1.jpg" width="300" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="category-card" onclick="openGallery('corporate', 0)">
+                    <h3>Corporate</h3>
+                    <p>Professional corporate photography</p>
+                    <div class="category-preview">
+                        <canvas class="preview-canvas" data-src="images/corporate/corporate1.jpg" width="300" height="200"></canvas>
+                    </div>
+                </div>
+                
+                <div class="category-card" onclick="openGallery('misc', 0)">
+                    <h3>Miscellaneous</h3>
+                    <p>Diverse creative works and experiments</p>
+                    <div class="category-preview">
+                        <canvas class="preview-canvas" data-src="images/misc/misc1.jpg" width="300" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About</h2>
+                    <p class="about-description">
+                        Welcome to my world of visual storytelling, where every frame captures 
+                        the extraordinary beauty found in ordinary moments. Through my lens, I reveal 
+                        the emotions, stories, and connections that make us human.
+                    </p>
+                    <p class="about-description">
+                        My work spans various genres - from intimate portraits that capture the essence 
+                        of the soul to dynamic event photography that freezes moments of pure joy. 
+                        Each image is carefully crafted with attention to light, composition, and emotion.
+                    </p>
+                    <div class="exhibitions">
+                        <h3>Recent Exhibitions</h3>
+                        <ul>
+                            <li>Visual Narratives - Contemporary Gallery (2024)</li>
+                            <li>Moments in Time - Art Space Collective (2023)</li>
+                            <li>Human Connection - Photography Center (2023)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <canvas class="about-canvas" data-src="images/about/photographer.jpg" width="400" height="500"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to capture your story? Let's create something beautiful together.</p>
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> hello@mayamindphoto.com</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Location:</strong> Based in [Your City]</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGallery()">&times;</span>
+            <div class="modal-header">
+                <h2 id="galleryTitle">Gallery</h2>
+                <div class="modal-nav">
+                    <button id="prevBtn" onclick="prevImage()">❮</button>
+                    <span id="imageCounter">1 / 6</span>
+                    <button id="nextBtn" onclick="nextImage()">❯</button>
+                </div>
+            </div>
+            <div class="modal-image-container">
+                <canvas id="modalCanvas" width="800" height="600"></canvas>
+            </div>
+            <div class="modal-thumbnails" id="modalThumbnails"></div>
+        </div>
+    </div>
+
+    <script src="final-portfolio.js"></script>
+</body>
+</html>
