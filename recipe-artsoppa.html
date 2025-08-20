@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ärtsoppa - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-detail">
+            <div class="container">
+                <div class="recipe-header">
+                    <img src="images/artsoppa-detail.jpg" alt="Ärtsoppa" class="recipe-image">
+                    
+                    <div class="recipe-meta">
+                        <h1>Ärtsoppa (Swedish Pea Soup)</h1>
+                        <div class="controls">
+                            <label class="unit-toggle">
+                                <span>Units:</span>
+                                <select id="unitSystem" onchange="toggleUnits()">
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </label>
+                            
+                            <label class="portion-control">
+                                <span>Portions:</span>
+                                <input type="number" id="portions" value="6" min="1" max="12" onchange="updatePortions()">
+                            </label>
+                        </div>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-label">Cost per serving:</span>
+                                <span class="stat-value">~12 kr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Prep time:</span>
+                                <span class="stat-value">15 minutes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Cook time:</span>
+                                <span class="stat-value">2 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-content">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">500g</span><span class="amount imperial hidden">1.1 lbs</span> yellow split peas (dried) - <strong>15 kr</strong> <em>(ICA Basic)</em></li>
+                            <li><span class="amount metric">300g</span><span class="amount imperial hidden">10 oz</span> smoked pork shoulder or ham - <strong>28 kr</strong> <em>(Coop)</em></li>
+                            <li><span class="amount metric">1</span><span class="amount imperial hidden">1</span> large onion - <strong>4 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">2</span><span class="amount imperial hidden">2</span> carrots - <strong>3 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">1</span><span class="amount imperial hidden">1</span> leek (optional) - <strong>8 kr</strong> <em>(ICA)</em></li>
+                            <li><span class="amount metric">2</span><span class="amount imperial hidden">2</span> bay leaves - <strong>2 kr</strong></li>
+                            <li><span class="amount metric">1 tsp</span><span class="amount imperial hidden">1 tsp</span> dried thyme - <strong>2 kr</strong></li>
+                            <li><span class="amount metric">1.5 liters</span><span class="amount imperial hidden">6.3 cups</span> water - <strong>0 kr</strong></li>
+                            <li><span class="amount metric">1 tsp</span><span class="amount imperial hidden">1 tsp</span> salt - <strong>0.5 kr</strong></li>
+                            <li><span class="amount metric">1/2 tsp</span><span class="amount imperial hidden">1/2 tsp</span> white pepper - <strong>1 kr</strong></li>
+                        </ul>
+                        
+                        <h4>To serve:</h4>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">6 slices</span><span class="amount imperial hidden">6 slices</span> dark rye bread - <strong>8 kr</strong> <em>(Polarbröd)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> Swedish mustard - <strong>3 kr</strong> <em>(Slotts)</em></li>
+                        </ul>
+                        
+                        <div class="cost-breakdown">
+                            <strong>Total cost: ~74 kr for 6 servings (12 kr per serving)</strong>
+                        </div>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                            <li>Rinse the yellow split peas in cold water until water runs clear.</li>
+                            <li>Place peas and smoked pork in a large pot with 1.5 liters of water.</li>
+                            <li>Bring to a boil, then reduce heat and simmer covered for 1 hour, stirring occasionally.</li>
+                            <li>Remove any foam that forms on the surface during cooking.</li>
+                            <li>Dice onion and carrots. Clean and slice leek if using.</li>
+                            <li>Add vegetables, bay leaves, and thyme to the pot.</li>
+                            <li>Continue simmering for another 45-60 minutes until peas break down and soup thickens.</li>
+                            <li>Remove the pork, let cool slightly, then dice into bite-sized pieces.</li>
+                            <li>Remove bay leaves and return diced pork to soup.</li>
+                            <li>Season with salt and white pepper to taste.</li>
+                            <li>If soup is too thick, add hot water. If too thin, simmer uncovered to reduce.</li>
+                            <li>Serve hot with dark rye bread and Swedish mustard on the side.</li>
+                        </ol>
+                    </div>
+
+                    <div class="cultural-info">
+                        <h3>About This Swedish Delicacy</h3>
+                        <p>Ärtsoppa is one of Sweden's most beloved traditional dishes, historically eaten on Thursdays followed by pannkakor (Swedish pancakes) for dessert. This tradition dates back to pre-Reformation times when Thursday was a fasting day before Friday.</p>
+                        
+                        <p>The soup is hearty, nutritious, and incredibly economical - perfect for Sweden's harsh winters. Swedish families often make large batches because it tastes even better the next day, and it freezes beautifully for up to 3 months.</p>
+                        
+                        <p><strong>Swedish tradition:</strong> In the Swedish military, ärtsoppa has been served every Thursday since the 1800s, a tradition that continues today. Many Swedish restaurants still serve it as "torsdagssoppa" (Thursday soup).</p>
+                        
+                        <p><strong>Pro tip:</strong> The key to great ärtsoppa is slow cooking and patience. Don't rush it - let the peas break down naturally to create that characteristic thick, creamy texture.</p>
+                        
+                        <p><strong>Money-saving tip:</strong> Buy dried peas in bulk - they keep for years and are one of the cheapest protein sources available. Use leftover ham bones for even more flavor!</p>
+                    </div>
+
+                    <div class="store-info">
+                        <h3>Where to Buy (Best Prices)</h3>
+                        <ul>
+                            <li><strong>Dried peas:</strong> ICA Basic or Coop in 1kg bags for best value</li>
+                            <li><strong>Smoked pork:</strong> Look for sales at Hemköp or ICA, freeze extras</li>
+                            <li><strong>Vegetables:</strong> Lidl consistently has the cheapest root vegetables</li>
+                            <li><strong>Bread:</strong> Polarbröd or Korvbröd dark rye, often on sale</li>
+                            <li><strong>Mustard:</strong> Slotts or Kelda brands at any Swedish store</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

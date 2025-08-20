@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasselbackspotatis - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-detail">
+            <div class="container">
+                <div class="recipe-header">
+                    <img src="images/hasselback-detail.jpg" alt="Hasselbackspotatis" class="recipe-image">
+                    
+                    <div class="recipe-meta">
+                        <h1>Hasselbackspotatis (Swedish Sliced Baked Potatoes)</h1>
+                        <div class="controls">
+                            <label class="unit-toggle">
+                                <span>Units:</span>
+                                <select id="unitSystem" onchange="toggleUnits()">
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </label>
+                            
+                            <label class="portion-control">
+                                <span>Portions:</span>
+                                <input type="number" id="portions" value="4" min="1" max="12" onchange="updatePortions()">
+                            </label>
+                        </div>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-label">Cost per serving:</span>
+                                <span class="stat-value">~11 kr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Prep time:</span>
+                                <span class="stat-value">15 minutes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Cook time:</span>
+                                <span class="stat-value">45 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-content">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">8</span><span class="amount imperial hidden">8</span> medium potatoes (Almond or King Edward) - <strong>12 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">50g</span><span class="amount imperial hidden">1.8 oz</span> butter - <strong>10 kr</strong> <em>(Lidl Milbona)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> olive oil - <strong>6 kr</strong> <em>(ICA Basic)</em></li>
+                            <li><span class="amount metric">1 tsp</span><span class="amount imperial hidden">1 tsp</span> sea salt - <strong>1 kr</strong></li>
+                            <li><span class="amount metric">1/2 tsp</span><span class="amount imperial hidden">1/2 tsp</span> black pepper - <strong>1 kr</strong></li>
+                            <li><span class="amount metric">2 cloves</span><span class="amount imperial hidden">2 cloves</span> garlic, minced (optional) - <strong>2 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> fresh herbs or 1 tsp dried (rosemary, thyme) - <strong>8 kr</strong> <em>(fresh herbs, or 2 kr dried)</em></li>
+                        </ul>
+                        
+                        <h4>Optional toppings:</h4>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">50g</span><span class="amount imperial hidden">1.8 oz</span> grated cheese - <strong>8 kr</strong> <em>(any Swedish cheese)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> breadcrumbs - <strong>2 kr</strong> <em>(make from old bread)</em></li>
+                        </ul>
+                        
+                        <div class="cost-breakdown">
+                            <strong>Total cost: ~44 kr for 4 servings (11 kr per serving)</strong>
+                        </div>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                            <li>Preheat oven to 220°C (425°F).</li>
+                            <li>Wash and scrub potatoes thoroughly but leave skin on.</li>
+                            <li>Place each potato on a cutting board. Make cuts <span class="metric">3-5mm</span><span class="imperial hidden">1/8 inch</span> apart, cutting about 3/4 through the potato (not all the way through).</li>
+                            <li><strong>Pro tip:</strong> Place wooden spoons on either side of the potato to prevent cutting all the way through.</li>
+                            <li>Place sliced potatoes in a baking dish.</li>
+                            <li>Melt butter and mix with olive oil, minced garlic, salt, pepper, and herbs.</li>
+                            <li>Brush the butter mixture generously over each potato, making sure to get between the slices.</li>
+                            <li>Bake for 30 minutes.</li>
+                            <li>Remove and brush with more butter mixture. If using cheese and breadcrumbs, sprinkle on now.</li>
+                            <li>Bake another 15-20 minutes until golden brown and crispy on the edges.</li>
+                            <li>The slices should fan out and the edges should be crispy while the inside remains fluffy.</li>
+                            <li>Serve immediately while hot and crispy.</li>
+                        </ol>
+                    </div>
+
+                    <div class="cultural-info">
+                        <h3>About This Swedish Delicacy</h3>
+                        <p>Hasselbackspotatis was invented in the 1940s at Hasselbacken restaurant on Djurgården island in Stockholm. Named after the restaurant, these accordion-style potatoes quickly became a staple of Swedish cuisine and are now served worldwide.</p>
+                        
+                        <p>The beauty of hasselback potatoes lies in their unique texture - crispy, golden edges with a fluffy, tender interior. They're perfect alongside Swedish meatballs, fish dishes, or as part of a traditional Swedish Christmas spread.</p>
+                        
+                        <p><strong>Swedish serving tradition:</strong> These are often served during holidays and special occasions, particularly at Christmas alongside ham, herring, and other traditional dishes.</p>
+                        
+                        <p><strong>Pro technique:</strong> The key is getting the butter and seasonings down between the slices. Use a pastry brush or spoon to really work the mixture into all the cuts.</p>
+                        
+                        <p><strong>Money-saving tip:</strong> Buy potatoes in bulk bags from Lidl - they're always cheapest there. Choose medium-sized, uniform potatoes for the best presentation.</p>
+                    </div>
+
+                    <div class="store-info">
+                        <h3>Where to Buy (Best Prices)</h3>
+                        <ul>
+                            <li><strong>Potatoes:</strong> Lidl 2kg bags are unbeatable for price</li>
+                            <li><strong>Butter:</strong> Lidl Milbona or ICA Basic when on sale</li>
+                            <li><strong>Olive oil:</strong> ICA Basic or Coop store brand</li>
+                            <li><strong>Fresh herbs:</strong> Grow your own on the windowsill, or buy from ICA</li>
+                            <li><strong>Garlic:</strong> Lidl sells nets of garlic bulbs cheaply</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

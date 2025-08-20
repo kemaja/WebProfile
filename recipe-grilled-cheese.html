@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swedish Grilled Cheese - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-detail">
+            <div class="container">
+                <div class="recipe-header">
+                    <img src="images/grilled-cheese-detail.jpg" alt="Swedish Grilled Cheese" class="recipe-image">
+                    
+                    <div class="recipe-meta">
+                        <h1>Swedish Grilled Cheese (Grillad Ost Smörgås)</h1>
+                        <div class="controls">
+                            <label class="unit-toggle">
+                                <span>Units:</span>
+                                <select id="unitSystem">
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </label>
+                            
+                            <label class="portion-control">
+                                <span>Portions:</span>
+                                <input type="number" id="portions" value="2" min="1" max="12">
+                            </label>
+                            
+                            <button class="update-button" onclick="updateRecipe()">Update Recipe</button>
+                            <div id="updateConfirmation" class="update-confirmation hidden">✓ Recipe updated!</div>
+                        </div>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-label">Cost per serving:</span>
+                                <span class="stat-value">~15 kr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Prep time:</span>
+                                <span class="stat-value">5 minutes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Cook time:</span>
+                                <span class="stat-value">6 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-content">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">4 slices</span><span class="amount imperial hidden">4 slices</span> bread (Polarbröd or similar) - <strong>8 kr</strong> <em>(ICA)</em></li>
+                            <li><span class="amount metric">100g</span><span class="amount imperial hidden">3.5 oz</span> Swedish cheese (Präst or Herrgård) - <strong>18 kr</strong> <em>(Coop)</em></li>
+                            <li><span class="amount metric">20g</span><span class="amount imperial hidden">0.7 oz</span> butter - <strong>3 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">1 tbsp</span><span class="amount imperial hidden">1 tbsp</span> mustard (optional) - <strong>1 kr</strong> <em>(ICA)</em></li>
+                        </ul>
+                        <div class="cost-breakdown">
+                            <strong>Total cost: ~30 kr for 2 servings</strong>
+                        </div>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                            <li>Slice the cheese into <span class="metric">3mm</span><span class="imperial hidden">1/8 inch</span> thick pieces.</li>
+                            <li>If using mustard, spread a thin layer on one side of 2 bread slices.</li>
+                            <li>Place cheese evenly on the mustard-covered slices, then top with remaining bread.</li>
+                            <li>Heat a pan over medium heat and add half the butter.</li>
+                            <li>Place sandwiches in the pan and cook for 2-3 minutes until golden brown.</li>
+                            <li>Add remaining butter to the pan, flip sandwiches, and cook another 2-3 minutes.</li>
+                            <li>Remove from heat when both sides are golden and cheese is melted.</li>
+                            <li>Cut diagonally and serve immediately with pickles or lingonberry jam.</li>
+                        </ol>
+                    </div>
+
+                    <div class="cultural-info">
+                        <h3>About This Swedish Delicacy</h3>
+                        <p>The Swedish grilled cheese sandwich (grillad ost smörgås) is a beloved comfort food that became popular in Sweden during the 1950s. Unlike its American cousin, the Swedish version often features local cheeses like Herrgård or Präst, which melt beautifully and provide a distinctive nutty flavor.</p>
+                        
+                        <p>Swedish families typically serve this with pickled cucumbers (inlagda gurkor) or a dollop of lingonberry jam for a sweet-savory contrast. It's a perfect example of Swedish "husmanskost" - traditional home cooking that's both satisfying and economical.</p>
+                        
+                        <p><strong>Money-saving tip:</strong> Buy cheese in larger blocks from Lidl or when on sale at ICA - it's often 30-40% cheaper than pre-sliced options!</p>
+                    </div>
+
+                    <div class="store-info">
+                        <h3>Where to Buy (Best Prices)</h3>
+                        <ul>
+                            <li><strong>Bread:</strong> Lidl (cheapest) or ICA Básic line</li>
+                            <li><strong>Cheese:</strong> Coop weekend sales or Lidl's Milbona brand</li>
+                            <li><strong>Butter:</strong> Lidl Milbona or ICA Basic</li>
+                            <li><strong>Mustard:</strong> Any store - Slotts or Kelda brands</li>
+                        </ul>
+                    </div>
+
+                    <div class="allergy-info">
+                        <h3>Allergy-Friendly Alternatives</h3>
+                        <div class="allergy-grid">
+                            <div class="allergy-option">
+                                <h4>🌾 Gluten-Free Option</h4>
+                                <ul>
+                                    <li><strong>Bread:</strong> ICA gluten-free bread (~18 kr) or Schär brand</li>
+                                    <li><strong>Where:</strong> ICA Maxi, Coop - gluten-free section</li>
+                                    <li><strong>Cost:</strong> ~25 kr per serving (10 kr extra)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="allergy-option">
+                                <h4>🥛 Lactose-Free Option</h4>
+                                <ul>
+                                    <li><strong>Cheese:</strong> Arla lactose-free cheese (~22 kr)</li>
+                                    <li><strong>Butter:</strong> Arla lactose-free butter (~12 kr)</li>
+                                    <li><strong>Where:</strong> All major stores - dairy section</li>
+                                    <li><strong>Cost:</strong> ~18 kr per serving (3 kr extra)</li>
+                                </ul>
+                            </div>
+
+                            <div class="allergy-option">
+                                <h4>🌱 Vegan Option</h4>
+                                <ul>
+                                    <li><strong>Cheese:</strong> Violife vegan cheese (~28 kr)</li>
+                                    <li><strong>Butter:</strong> Flora plant butter (~10 kr)</li>
+                                    <li><strong>Where:</strong> ICA Maxi, Coop - vegan section</li>
+                                    <li><strong>Cost:</strong> ~20 kr per serving (5 kr extra)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

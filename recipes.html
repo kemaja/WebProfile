@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Suggestions - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-hero">
+            <div class="container">
+                <h2>All Swedish Budget Recipes</h2>
+                <div class="controls">
+                    <label class="unit-toggle">
+                        <span>Units:</span>
+                        <select id="unitSystem" onchange="toggleUnits()">
+                            <option value="metric">Metric</option>
+                            <option value="imperial">Imperial</option>
+                        </select>
+                    </label>
+                    
+                    <label class="portion-control">
+                        <span>Portions:</span>
+                        <input type="number" id="portions" value="4" min="1" max="12" onchange="updatePortions()">
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-recipes">
+            <div class="container">
+                <div class="recipe-grid">
+                    <div class="recipe-card">
+                        <img src="images/grilled-cheese.jpg" alt="Swedish Grilled Cheese">
+                        <div class="recipe-info">
+                            <h3>Swedish Grilled Cheese</h3>
+                            <p class="cost">~15 kr per serving</p>
+                            <p class="description">Classic comfort food with Swedish twist</p>
+                            <a href="recipe-grilled-cheese.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/pannkakor.jpg" alt="Swedish Pannkakor">
+                        <div class="recipe-info">
+                            <h3>Pannkakor</h3>
+                            <p class="cost">~8 kr per serving</p>
+                            <p class="description">Traditional Swedish pancakes</p>
+                            <a href="recipe-pannkakor.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/kottbullar.jpg" alt="Swedish Köttbullar">
+                        <div class="recipe-info">
+                            <h3>Budget Köttbullar</h3>
+                            <p class="cost">~22 kr per serving</p>
+                            <p class="description">Swedish meatballs on a budget</p>
+                            <a href="recipe-kottbullar.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/fisk-gratang.jpg" alt="Fish Gratin">
+                        <div class="recipe-info">
+                            <h3>Budget Fisk Gratäng</h3>
+                            <p class="cost">~28 kr per serving</p>
+                            <p class="description">Creamy fish gratin</p>
+                            <a href="recipe-fisk-gratang.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/pytt-panna.jpg" alt="Pytt i Panna">
+                        <div class="recipe-info">
+                            <h3>Pytt i Panna</h3>
+                            <p class="cost">~18 kr per serving</p>
+                            <p class="description">Swedish hash with leftovers</p>
+                            <a href="recipe-pytt-panna.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/artsoppa.jpg" alt="Ärtsoppa - Pea Soup">
+                        <div class="recipe-info">
+                            <h3>Ärtsoppa</h3>
+                            <p class="cost">~12 kr per serving</p>
+                            <p class="description">Traditional Thursday pea soup</p>
+                            <a href="recipe-artsoppa.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/kalops.jpg" alt="Swedish Kalops">
+                        <div class="recipe-info">
+                            <h3>Budget Kalops</h3>
+                            <p class="cost">~25 kr per serving</p>
+                            <p class="description">Swedish beef stew</p>
+                            <a href="recipe-kalops.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/stromming.jpg" alt="Stekt Strömming">
+                        <div class="recipe-info">
+                            <h3>Stekt Strömming</h3>
+                            <p class="cost">~14 kr per serving</p>
+                            <p class="description">Fried Baltic herring</p>
+                            <a href="recipe-stromming.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/kroppkakor.jpg" alt="Kroppkakor">
+                        <div class="recipe-info">
+                            <h3>Kroppkakor</h3>
+                            <p class="cost">~16 kr per serving</p>
+                            <p class="description">Potato dumplings with pork</p>
+                            <a href="recipe-kroppkakor.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/inlagd-sill.jpg" alt="Inlagd Sill">
+                        <div class="recipe-info">
+                            <h3>Inlagd Sill</h3>
+                            <p class="cost">~9 kr per serving</p>
+                            <p class="description">Pickled herring platter</p>
+                            <a href="recipe-inlagd-sill.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/hasselback.jpg" alt="Hasselbackspotatis">
+                        <div class="recipe-info">
+                            <h3>Hasselbackspotatis</h3>
+                            <p class="cost">~11 kr per serving</p>
+                            <p class="description">Swedish sliced baked potatoes</p>
+                            <a href="recipe-hasselback.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card">
+                        <img src="images/blodpudding.jpg" alt="Blodpudding">
+                        <div class="recipe-info">
+                            <h3>Blodpudding</h3>
+                            <p class="cost">~13 kr per serving</p>
+                            <p class="description">Swedish blood pudding with lingonberries</p>
+                            <a href="recipe-blodpudding.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

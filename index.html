@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Cooking for Expats in Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading" id="loading">
+        <div class="packman">🍽️</div>
+        <p>Loading delicious recipes...</p>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Cook Delicious Swedish Meals on a Budget!</h2>
+                <p>Perfect for expats discovering Swedish cuisine without breaking the bank</p>
+            </div>
+        </section>
+
+        <section class="ingredient-selector">
+            <div class="container">
+                <h3>What do you already have at home?</h3>
+                <p>Select the ingredients you have, and we'll suggest budget-friendly Swedish recipes!</p>
+                
+                <div class="ingredient-grid">
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="eggs" onchange="updateIngredients()">
+                        <span>🥚 Eggs</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="milk" onchange="updateIngredients()">
+                        <span>🥛 Milk</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="bread" onchange="updateIngredients()">
+                        <span>🍞 Bread</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="butter" onchange="updateIngredients()">
+                        <span>🧈 Butter</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="flour" onchange="updateIngredients()">
+                        <span>🌾 Flour</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="cheese" onchange="updateIngredients()">
+                        <span>🧀 Cheese</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="potatoes" onchange="updateIngredients()">
+                        <span>🥔 Potatoes</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="onion" onchange="updateIngredients()">
+                        <span>🧅 Onion</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="meat" onchange="updateIngredients()">
+                        <span>🥩 Meat (any)</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="pasta" onchange="updateIngredients()">
+                        <span>🍝 Pasta</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="rice" onchange="updateIngredients()">
+                        <span>🍚 Rice</span>
+                    </label>
+                    
+                    <label class="ingredient-item">
+                        <input type="checkbox" value="vegetables" onchange="updateIngredients()">
+                        <span>🥕 Mixed Vegetables</span>
+                    </label>
+                </div>
+                
+                <button id="findRecipes" class="cta-button" onclick="findRecipes()">Find My Perfect Recipe!</button>
+                
+                <div id="suggestions" class="suggestions hidden">
+                    <h4>Perfect matches for you:</h4>
+                    <div id="suggestionList"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-recipes">
+            <div class="container">
+                <h3>Popular Swedish Budget Recipes</h3>
+                <div class="recipe-preview-grid">
+                    <div class="recipe-card">
+                        <img src="images/grilled-cheese.jpg" alt="Swedish Grilled Cheese">
+                        <div class="recipe-info">
+                            <h4>Swedish Grilled Cheese</h4>
+                            <p>Cost: ~15 kr per serving</p>
+                            <a href="recipe-grilled-cheese.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="images/pannkakor.jpg" alt="Swedish Pancakes">
+                        <div class="recipe-info">
+                            <h4>Pannkakor (Swedish Pancakes)</h4>
+                            <p>Cost: ~8 kr per serving</p>
+                            <a href="recipe-pannkakor.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="images/kottbullar.jpg" alt="Swedish Meatballs">
+                        <div class="recipe-info">
+                            <h4>Budget Köttbullar</h4>
+                            <p>Cost: ~22 kr per serving</p>
+                            <a href="recipe-kottbullar.html" class="recipe-link">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+            <p>Prices sourced from ICA, Coop, Lidl & other Swedish retailers</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

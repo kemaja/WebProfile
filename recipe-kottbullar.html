@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Köttbullar - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-detail">
+            <div class="container">
+                <div class="recipe-header">
+                    <img src="images/kottbullar-detail.jpg" alt="Budget Köttbullar" class="recipe-image">
+                    
+                    <div class="recipe-meta">
+                        <h1>Budget Köttbullar (Swedish Meatballs)</h1>
+                        <div class="controls">
+                            <label class="unit-toggle">
+                                <span>Units:</span>
+                                <select id="unitSystem">
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </label>
+                            
+                            <label class="portion-control">
+                                <span>Portions:</span>
+                                <input type="number" id="portions" value="4" min="1" max="12">
+                            </label>
+                            
+                            <button class="update-button" onclick="updateRecipe()">Update Recipe</button>
+                            <div id="updateConfirmation" class="update-confirmation hidden">✓ Recipe updated!</div>
+                        </div>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-label">Cost per serving:</span>
+                                <span class="stat-value">~22 kr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Prep time:</span>
+                                <span class="stat-value">20 minutes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Cook time:</span>
+                                <span class="stat-value">25 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-content">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <h4>For the meatballs:</h4>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">400g</span><span class="amount imperial hidden">14 oz</span> mixed ground meat (beef/pork) - <strong>32 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">1</span><span class="amount imperial hidden">1</span> small onion, finely chopped - <strong>3 kr</strong> <em>(ICA)</em></li>
+                            <li><span class="amount metric">1</span><span class="amount imperial hidden">1</span> egg - <strong>3 kr</strong> <em>(Coop)</em></li>
+                            <li><span class="amount metric">50ml</span><span class="amount imperial hidden">1/4 cup</span> milk - <strong>2 kr</strong> <em>(any store)</em></li>
+                            <li><span class="amount metric">50g</span><span class="amount imperial hidden">1/2 cup</span> breadcrumbs - <strong>4 kr</strong> <em>(make from old bread)</em></li>
+                            <li><span class="amount metric">1 tsp</span><span class="amount imperial hidden">1 tsp</span> salt - <strong>0.5 kr</strong></li>
+                            <li><span class="amount metric">1/2 tsp</span><span class="amount imperial hidden">1/2 tsp</span> white pepper - <strong>1 kr</strong></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> butter for frying - <strong>4 kr</strong> <em>(Lidl)</em></li>
+                        </ul>
+                        
+                        <h4>For the cream sauce:</h4>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> flour - <strong>1 kr</strong></li>
+                            <li><span class="amount metric">400ml</span><span class="amount imperial hidden">1.7 cups</span> beef stock - <strong>6 kr</strong> <em>(bouillon cube)</em></li>
+                            <li><span class="amount metric">200ml</span><span class="amount imperial hidden">0.8 cups</span> cream - <strong>8 kr</strong> <em>(ICA Basic)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> lingonberry jam - <strong>6 kr</strong> <em>(Felix)</em></li>
+                        </ul>
+                        
+                        <h4>To serve:</h4>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">800g</span><span class="amount imperial hidden">1.8 lbs</span> potatoes - <strong>8 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">2 tbsp</span><span class="amount imperial hidden">2 tbsp</span> lingonberry jam - <strong>6 kr</strong> <em>(Felix)</em></li>
+                        </ul>
+                        
+                        <div class="cost-breakdown">
+                            <strong>Total cost: ~88 kr for 4 servings (22 kr per serving)</strong>
+                        </div>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                            <li>Soak breadcrumbs in milk for 5 minutes until soft.</li>
+                            <li>Finely chop onion and sauté in a little butter until soft. Let cool.</li>
+                            <li>Mix ground meat, soaked breadcrumbs, egg, cooked onion, salt, and pepper in a bowl.</li>
+                            <li>Mix thoroughly with your hands until well combined. Let rest for 15 minutes.</li>
+                            <li>Roll mixture into small balls, about <span class="metric">3cm</span><span class="imperial hidden">1.2 inches</span> diameter.</li>
+                            <li>Heat butter in a large pan over medium heat. Fry meatballs in batches until golden brown on all sides (8-10 minutes). Remove and set aside.</li>
+                            <li>In the same pan, add flour and cook for 1 minute, stirring constantly.</li>
+                            <li>Gradually add stock, whisking constantly to avoid lumps.</li>
+                            <li>Add cream and lingonberry jam, simmer for 5 minutes until thickened.</li>
+                            <li>Return meatballs to sauce and simmer for 10 minutes.</li>
+                            <li>Meanwhile, boil peeled potatoes until tender (15-20 minutes).</li>
+                            <li>Serve meatballs with cream sauce, boiled potatoes, and extra lingonberry jam.</li>
+                        </ol>
+                    </div>
+
+                    <div class="cultural-info">
+                        <h3>About This Swedish Delicacy</h3>
+                        <p>Köttbullar are perhaps the most famous Swedish dish worldwide, but in Sweden, they're so much more than the IKEA version. Traditional Swedish meatballs are smaller and more delicate than their international cousins, and they're always served with cream sauce, lingonberries, and boiled potatoes.</p>
+                        
+                        <p>This recipe uses a budget-friendly mix of beef and pork (or just beef if cheaper), and makes the sauce from scratch rather than using expensive pre-made versions. The secret to authentic Swedish meatballs is the combination of fine breadcrumbs soaked in milk and the addition of finely chopped sautéed onions.</p>
+                        
+                        <p><strong>Swedish tradition:</strong> Many families serve köttbullar on Sundays with the whole family gathered around the table. It's comfort food at its finest!</p>
+                        
+                        <p><strong>Money-saving tips:</strong> Buy meat in bulk when on sale and freeze portions. Make extra meatballs and freeze them after browning - they keep for 3 months!</p>
+                    </div>
+
+                    <div class="store-info">
+                        <h3>Where to Buy (Best Prices)</h3>
+                        <ul>
+                            <li><strong>Ground meat:</strong> Lidl or Willys often have the best prices, especially mixed beef/pork</li>
+                            <li><strong>Cream:</strong> ICA Basic or store brands are much cheaper than premium brands</li>
+                            <li><strong>Lingonberry jam:</strong> Felix brand at Coop, or store brands at ICA</li>
+                            <li><strong>Potatoes:</strong> Always cheapest at Lidl, buy in 2kg bags</li>
+                            <li><strong>Stock cubes:</strong> Knorr or store brands work perfectly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

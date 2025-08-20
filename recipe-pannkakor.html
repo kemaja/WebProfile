@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pannkakor - Budget Bites Sweden</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-icon">🍳</div>
+                <div class="logo-text">
+                    <h1>Budget Bites Sweden</h1>
+                    <span class="logo-tagline">Cooking on a krona</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="special-diets.html">Special Diets</a></li>
+                <li><a href="support.html">Submit Recipe</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipe-detail">
+            <div class="container">
+                <div class="recipe-header">
+                    <img src="images/pannkakor-detail.jpg" alt="Pannkakor" class="recipe-image">
+                    
+                    <div class="recipe-meta">
+                        <h1>Pannkakor (Swedish Pancakes)</h1>
+                        <div class="controls">
+                            <label class="unit-toggle">
+                                <span>Units:</span>
+                                <select id="unitSystem">
+                                    <option value="metric">Metric</option>
+                                    <option value="imperial">Imperial</option>
+                                </select>
+                            </label>
+                            
+                            <label class="portion-control">
+                                <span>Portions:</span>
+                                <input type="number" id="portions" value="4" min="1" max="12">
+                            </label>
+                            
+                            <button class="update-button" onclick="updateRecipe()">Update Recipe</button>
+                            <div id="updateConfirmation" class="update-confirmation hidden">✓ Recipe updated!</div>
+                        </div>
+                        
+                        <div class="recipe-stats">
+                            <div class="stat">
+                                <span class="stat-label">Cost per serving:</span>
+                                <span class="stat-value">~8 kr</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Prep time:</span>
+                                <span class="stat-value">10 minutes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Cook time:</span>
+                                <span class="stat-value">15 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recipe-content">
+                    <div class="ingredients-section">
+                        <h3>Ingredients</h3>
+                        <ul class="ingredients-list">
+                            <li><span class="amount metric">3 dl</span><span class="amount imperial hidden">1.25 cups</span> flour - <strong>3 kr</strong> <em>(Lidl)</em></li>
+                            <li><span class="amount metric">6 dl</span><span class="amount imperial hidden">2.5 cups</span> milk - <strong>8 kr</strong> <em>(ICA)</em></li>
+                            <li><span class="amount metric">3</span><span class="amount imperial hidden">3</span> eggs - <strong>9 kr</strong> <em>(Coop)</em></li>
+                            <li><span class="amount metric">1 tbsp</span><span class="amount imperial hidden">1 tbsp</span> sugar - <strong>1 kr</strong> <em>(any store)</em></li>
+                            <li><span class="amount metric">1/2 tsp</span><span class="amount imperial hidden">1/2 tsp</span> salt - <strong>0.50 kr</strong></li>
+                            <li><span class="amount metric">50g</span><span class="amount imperial hidden">1.8 oz</span> melted butter + extra for frying - <strong>10 kr</strong> <em>(Lidl)</em></li>
+                        </ul>
+                        <div class="cost-breakdown">
+                            <strong>Total cost: ~32 kr for 4 servings</strong>
+                        </div>
+                    </div>
+
+                    <div class="instructions-section">
+                        <h3>Instructions</h3>
+                        <ol class="instructions-list">
+                            <li>In a large bowl, whisk together flour, sugar, and salt.</li>
+                            <li>In another bowl, beat eggs and gradually add milk.</li>
+                            <li>Pour the milk mixture into the flour mixture, whisking constantly to avoid lumps.</li>
+                            <li>Add melted butter and whisk until smooth. Let batter rest for 30 minutes.</li>
+                            <li>Heat a thin layer of butter in a large skillet or pannkakspanna over medium heat.</li>
+                            <li>Pour batter to make thin pancakes, tilting pan to spread evenly.</li>
+                            <li>Cook for 1-2 minutes until bottom is golden, then flip and cook 1 minute more.</li>
+                            <li>Stack finished pancakes on a plate and keep warm.</li>
+                            <li>Serve with lingonberry jam and whipped cream, or sugar and lemon.</li>
+                        </ol>
+                    </div>
+
+                    <div class="cultural-info">
+                        <h3>About This Swedish Delicacy</h3>
+                        <p>Pannkakor are Sweden's answer to crepes - thin, delicate pancakes that are a cornerstone of Swedish home cooking. Every Thursday, many Swedish families enjoy pannkakor as a traditional dinner, often following the weekly ärtsoppa (pea soup).</p>
+                        
+                        <p>These pancakes are typically served with lingonsylt (lingonberry jam) and vispgrädde (whipped cream). Some families prefer the classic combination of sugar and lemon juice. In Skåne, they're often served with bacon as "pannkakor med fläsk."</p>
+                        
+                        <p><strong>Pro tip:</strong> Use a special pannkakspanna (Swedish pancake pan) if you can find one at second-hand stores - it makes perfectly thin pancakes every time!</p>
+                    </div>
+
+                    <div class="store-info">
+                        <h3>Where to Buy (Best Prices)</h3>
+                        <ul>
+                            <li><strong>Flour:</strong> Lidl Harvest Home brand (cheapest) - 500g for 8 kr</li>
+                            <li><strong>Milk:</strong> ICA Basic or Arla Eko when on sale</li>
+                            <li><strong>Eggs:</strong> Coop or ICA - often 3 for 2 deals</li>
+                            <li><strong>Lingonberry jam:</strong> Felix or ICA brand, Lidl has good prices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>🍽️ Budget Bites Sweden - Helping expats eat well for less!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
