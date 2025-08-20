@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="95" fill="#2E8B57" stroke="#1C5F3E" stroke-width="4"/>
+  
+  <!-- Inner decorative circle -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  
+  <!-- Arabic text "حلال" (Halal) -->
+  <text x="100" y="85" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="white">حلال</text>
+  
+  <!-- English text "HALAL" -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">HALAL</text>
+  
+  <!-- Bottom text "CERTIFIED" -->
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">CERTIFIED</text>
+  
+  <!-- Decorative stars -->
+  <polygon points="100,50 102,56 108,56 103,60 105,66 100,62 95,66 97,60 92,56 98,56" fill="white"/>
+  <polygon points="100,145 102,151 108,151 103,155 105,161 100,157 95,161 97,155 92,151 98,151" fill="white"/>
+  
+  <!-- Side crescents -->
+  <path d="M 60 100 A 8 8 0 1 1 60 100" fill="white"/>
+  <path d="M 140 100 A 8 8 0 1 0 140 100" fill="white"/>
+</svg>
