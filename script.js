@@ -449,14 +449,22 @@ function findRecipes() {
     findRecipesEnhanced();
 }
 // --- Google Tag Manager events for ingredient tracking ---
-document.querySelectorAll('.ingredient-item input[type="checkbox"]').forEach(input => {
-    input.addEventListener('change', function() {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'ingredient_add',
-            ingredient: this.value,
-            checked: this.checked
-        });
-        console.log('Ingredient event sent:', this.value, this.checked);
+// Attach to the actual markup: checkboxes inside .ingredient-grid
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.__bb_ingredients_bound) return;
+  window.__bb_ingredients_bound = true;
+
+  const boxes = document.querySelectorAll('.ingredient-grid input[type="checkbox"]');
+  boxes.forEach(input => {
+    input.addEventListener('change', function () {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'ingredient_add',
+        ingredient: this.value,
+        checked: this.checked
+      });
+      console.log('Ingredient event sent:', this.value, this.checked);
     });
+  });
 });
+
