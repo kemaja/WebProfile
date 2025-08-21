@@ -91,6 +91,19 @@ function findRecipes() {
         }
     });
     
+    // GA4: results shown
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'recipe_results_view',
+  total_ingredients: selectedIngredients.length,
+  result_count: matches.length,
+  ingredients_selected: [...selectedIngredients].sort().join(',')
+});
+console.log('DL push:', 'recipe_results_view', {
+  total_ingredients: selectedIngredients.length,
+  result_count: matches.length
+});
+
     // Display matches
     if (matches.length > 0) {
         matches.forEach(match => {
@@ -246,6 +259,24 @@ function submitRecipe(event) {
     console.log('Recipe submitted:', Object.fromEntries(formData));
 }
 
+// GA4: user submitted a recipe
+try {
+  const nameField = (document.querySelector('input[name="recipe_name"]') ||
+                     document.getElementById('recipeName'));
+  const recipeName = nameField?.value?.trim() || 'Untitled';
+
+  const ingredientInputs = document.querySelectorAll('input[name="ingredient[]"]');
+  const ingredientCount = Array.from(ingredientInputs).filter(i => i.value.trim()).length;
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'recipe_add',
+    recipe_name: recipeName,
+    ingredient_count: ingredientCount
+  });
+  console.log('DL push:', 'recipe_add', { recipeName, ingredientCount });
+} catch(e) { /* ignore */ }
+
 // Initialize page functions
 document.addEventListener('DOMContentLoaded', function() {
     // Set up cost calculation for existing inputs
@@ -258,7 +289,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (servingsInput) {
         servingsInput.addEventListener('change', calculateTotalCost);
     }
-    
+
+    // GA4: recipe detail click
+document.addEventListener('DOMContentLoaded', function () {
+  const recipeLinks = document.querySelectorAll('a.recipe-link');
+  recipeLinks.forEach(a => {
+    a.addEventListener('click', function () {
+      const recipeName =
+        (this.closest('.recipe-info')?.querySelector('h3,h4,h5')?.textContent?.trim()) ||
+        this.href.split('/').pop().replace(/\.html$/,'').replace(/[-_]/g,' ');
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'recipe_view',
+        recipe_name: recipeName,
+        ingredients_selected: [...selectedIngredients].sort().join(',')
+      });
+      console.log('DL push:', 'recipe_view', recipeName);
+    });
+  });
+});
+
     // Initialize portions tracking
     const portionsInput = document.getElementById('portions');
     if (portionsInput) {
