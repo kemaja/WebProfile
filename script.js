@@ -448,3 +448,15 @@ function getCombinations(arr, r) {
 function findRecipes() {
     findRecipesEnhanced();
 }
+// --- Google Tag Manager events for ingredient tracking ---
+document.querySelectorAll('.ingredient-item input[type="checkbox"]').forEach(input => {
+    input.addEventListener('change', function() {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'ingredient_add',
+            ingredient: this.value,
+            checked: this.checked
+        });
+        console.log('Ingredient event sent:', this.value, this.checked);
+    });
+});
